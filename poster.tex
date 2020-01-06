@@ -1,16 +1,17 @@
-\documentclass{betterposter}
+\documentclass[a0paper]{betterposter}
 
 \usepackage[default]{lato}
 \usepackage{inconsolata}
 
 \usepackage{fontawesome}
 \usepackage{graphicx}
+\usepackage{rotating}
 \usepackage{setspace}
 
 \definecolor{mygrey}{RGB}{63, 63, 63}
 
 % Title font
-\renewcommand{\fontsizetitle}{\fontsize{64}{80} \selectfont}
+\renewcommand{\fontsizetitle}{\fontsize{60}{80} \selectfont}
 
 % Main column font
 \renewcommand{\fontsizemain}{\fontsize{130}{200} \selectfont}
@@ -53,29 +54,29 @@
 }{%
 
 %%% LEFT COLUMN %%%
-\vspace{-1ex}\title{%
+\vspace{-1em}\title{%
     Evolutionary dataset
     \\optimisation: learning
-    \\algorithm quality through
-    \\evolution
+    \\algorithm quality
+    \\through evolution
 }
 \author{%
-    \vspace{-1ex}\textbf{Henry Wilde}, Vincent Knight,
+    \vspace{-1.5ex}\textbf{Henry Wilde}, Vincent Knight,
     \\Jonathan Gillard
 }
 
-\vspace{-1em}\section{Motivating paradigm}
+\vspace{-1.25em}\section{Motivating paradigm}
 \vspace{-1.5em}\begin{center}
     \includegraphics[width=.9\linewidth]{tex/paradigm.pdf}
 \end{center}
 
-\textcolor{mygrey}{%
+{\fontsize{26}{24}\selectfont\textcolor{mygrey}{%
     \textit{Left:} the proposed concept to understand algorithm performance by
     exploration of `good' (or bad) datasets. \textit{Right:} the established
     approach to algorithm selection by metric comparison.
-}
+}}
 
-\vspace{-.5em}\section{Using an evolutionary\\algorithm}
+\vspace{-2.5em}\section{Using an evolutionary\\algorithm}
 
 \vspace{-1em}\begin{minipage}{.04\linewidth}
     \
@@ -89,29 +90,39 @@
     \end{itemize}
 
     \vspace{1ex}\begin{itemize}
-        \renewcommand\labelitemi{\faThumbsODown~}
-        \item Potential suboptimal termination
+        \renewcommand\labelitemi{\faHandORight~}
+        \item Potential for suboptimal termination
         \item Finds the `easy' way out
+    \end{itemize}
+
+    \vspace{1ex}\begin{itemize}
+        \renewcommand\labelitemi{\faThumbsODown~}
         \item Requires careful consideration of fitness
     \end{itemize}
 \end{minipage}
 
-
-\section{A case study in clustering}
+\vspace{-.5em}
+\section{Understanding performance of clustering algorithms}
 
 \vspace{-1.5em}\begin{center}
     \begin{minipage}{.8\linewidth}
-        \includegraphics[width=\linewidth]{img/kmeans.pdf}\vspace{1ex}
-
-        \includegraphics[width=\linewidth]{img/dbscan.pdf}
+        \begin{tabular}{ccc}
+            {} & Best & Worst\\
+            \begin{turn}{90}\qquad\(k\)-means\end{turn} &
+            \includegraphics[width=.45\linewidth]{img/kmeans_best.pdf} &
+            \includegraphics[width=.45\linewidth]{img/kmeans_worst.pdf}\\
+            \begin{turn}{90}\qquad DBSCAN\end{turn} &
+            \includegraphics[width=.45\linewidth]{img/dbscan_best.pdf} &
+            \includegraphics[width=.45\linewidth]{img/dbscan_worst.pdf}
+        \end{tabular}
     \end{minipage}
 \end{center}
 
-\textcolor{mygrey}{%
-    Best and worst datasets from attempt to maximise the silhouette of
+{\fontsize{26}{24}\selectfont\textcolor{mygrey}{%
+    Best and worst datasets from an attempt to maximise the silhouette of
     \(k\)-means (\textit{top}) whilst minimising that of DBSCAN
     (\textit{bottom}).
-}
+}}
 
 }{%
 
