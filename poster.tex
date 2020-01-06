@@ -1,105 +1,158 @@
-\documentclass{beamer}
+\documentclass[a0paper]{betterposter}
 
 \usepackage[default]{lato}
 \usepackage{inconsolata}
+
 \usepackage{fontawesome}
-
-\usepackage[orientation=portrait,size=a1,scale=1]{beamerposter}
-
-\usepackage{standalone}
 \usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{setspace}
+
+\definecolor{mygrey}{RGB}{63, 63, 63}
+
+% Title font
+\renewcommand{\fontsizetitle}{\fontsize{60}{80} \selectfont}
+
+% Main column font
+\renewcommand{\fontsizemain}{\fontsize{130}{200} \selectfont}
+
+%% Setting the width of columns
+% Left column
+\setlength{\leftbarwidth}{0.25\paperwidth}
+% Right column
+\setlength{\rightbarwidth}{0.25\paperwidth}
 
 \begin{document}
+\color{mygrey}
 
-%%% TITLE %%%
+\betterposter{%
 
-\begin{columns}
-    \begin{column}{0.1\textwidth}
-        \vspace{2em}
+%%% MAIN COLUMN %%%
+\maincolumn{%
+    \textbf{Benchmark datasets}\\
+    are \textbf{not the only option}\\
+    when \textbf{understanding}\\
+    algorithm \textbf{performance}
+}{%
+    \compactqrcode{img/paper_qr.eps}{%
+        \textbf{Take a picture} to\\
+        download the full paper
+    }%
+    \hfill%
+    \includegraphics[width=.3\linewidth]{img/cu_logo}
 
-        \centering%
-        \includegraphics[width=\linewidth]{img/cu_logo}
-    \end{column}
-
-    \begin{column}{0.75\textwidth}
-        \vspace{2em}
-        \centering%
-        \textbf{%
-            \fontsize{60}{72}\selectfont Evolutionary Dataset Optimisation:
-            learning algorithm quality through evolution
-        }
-    \end{column}
-
-    \begin{column}{0.1\textwidth}
-    \end{column}
-\end{columns}
-
-\vspace{2em}
-
-%%% MAIN BODY %%%
-
-\begin{columns}
-    \begin{column}{0.4\textwidth}
-        \begin{center}
-            \includegraphics[width=\linewidth]{tex/paradigm.pdf}
-        \end{center}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-        \centering%
-        \includegraphics[width=.7\linewidth]{tex/individual.pdf}
-
-    \end{column}
-\end{columns}
-
-\vspace{2em}
-\hrule height 3pt
-\vspace{2em}
-
-\begin{columns}
-    \begin{column}{0.3\textwidth}
-        \centering%
-        \includegraphics[width=.7\linewidth]{tex/selection.pdf}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-        \centering%
-        \includegraphics[width=.8\linewidth]{tex/crossover.pdf}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-        \centering%
-        \includegraphics[width=.9\linewidth]{tex/mutation.pdf}
-    \end{column}
-\end{columns}
-
-\vspace{2em}
-\hrule height 3pt
-\vspace{2em}
-
-\begin{columns}
-    \begin{column}{0.4\textwidth}
-        \begin{center}
-            \includegraphics[width=\linewidth]{img/Fig12a.pdf}
-
-            \vspace{1em}
-
-            \includegraphics[width=\linewidth]{img/Fig12b.pdf}
-        \end{center}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-        \includegraphics[width=\linewidth]{img/Fig15.pdf}
-    \end{column}
-\end{columns}
-
-%%% FOOTER %%%
-
-\vfill%
-\begin{center}
-    \huge{%
-        \textbf{\faGithub~\faTwitter\quad daffidwilde}
-        \qquad\qquad
-        \textbf{\faBook\quad \texttt{edo.readthedocs.io}}
-        \qquad\qquad
-        \textbf{\faNewspaperO\quad \texttt{arxiv.org/abs/1907.13508}}
+    \vfill%
+    \vspace{2em}\fontsize{40}{50}\selectfont\textbf{%
+        \faGithub~\faTwitter\ \ daffidwilde
+        \hfill%
+        \faBook\ \ \texttt{edo.readthedocs.io}
+        \hfill%
+        \faNewspaperO\ \ \texttt{arxiv.org/abs/1907.13508}
     }
-\end{center}\vspace{2em}
+}
+
+}{%
+
+%%% LEFT COLUMN %%%
+\vspace{-1em}\title{%
+    Evolutionary dataset
+    \\optimisation: learning
+    \\algorithm quality
+    \\through evolution
+}
+\author{%
+    \vspace{-1.5ex}\textbf{Henry Wilde}, Vincent Knight,
+    \\Jonathan Gillard
+}
+
+\vspace{-1.25em}\section{Motivating paradigm}
+\vspace{-1.5em}\begin{center}
+    \includegraphics[width=.9\linewidth]{tex/paradigm.pdf}
+\end{center}
+
+{\fontsize{26}{24}\selectfont\textcolor{mygrey}{%
+    \textit{Left:} the proposed concept to understand algorithm performance by
+    exploration of `good' (or bad) datasets. \textit{Right:} the established
+    approach to algorithm selection by metric comparison.
+}}
+
+\vspace{-2.5em}\section{Using an evolutionary\\algorithm}
+
+\vspace{-1em}\begin{minipage}{.04\linewidth}
+    \
+\end{minipage}
+\begin{minipage}{.9\linewidth}
+    \begin{itemize}
+        \renewcommand\labelitemi{\faThumbsOUp~}
+        \item Effective in complex domains
+        \item Meaningful and adjustable design
+        \item Transparent and rich solutions
+    \end{itemize}
+
+    \vspace{1ex}\begin{itemize}
+        \renewcommand\labelitemi{\faHandORight~}
+        \item Potential for suboptimal termination
+        \item Finds the `easy' way out
+    \end{itemize}
+
+    \vspace{1ex}\begin{itemize}
+        \renewcommand\labelitemi{\faThumbsODown~}
+        \item Requires careful consideration of fitness
+    \end{itemize}
+\end{minipage}
+
+\vspace{-.5em}
+\section{Understanding performance of clustering algorithms}
+
+\vspace{-1.5em}\begin{center}
+    \begin{minipage}{.8\linewidth}
+        \hspace{-1em}\begin{tabular}{ccc}
+            {} & Best & Worst\\
+            \begin{turn}{90}\qquad\ \(k\)-means\end{turn} &
+            \includegraphics[width=.45\linewidth]{img/kmeans_best.pdf} &
+            \includegraphics[width=.45\linewidth]{img/kmeans_worst.pdf}\\
+            \begin{turn}{90}\qquad DBSCAN\end{turn} &
+            \includegraphics[width=.45\linewidth]{img/dbscan_best.pdf} &
+            \includegraphics[width=.45\linewidth]{img/dbscan_worst.pdf}
+        \end{tabular}
+    \end{minipage}
+\end{center}
+
+{\fontsize{26}{24}\selectfont\textcolor{mygrey}{%
+    Best and worst datasets from an attempt to maximise the silhouette of
+    \(k\)-means (\textit{top}) whilst minimising that of DBSCAN
+    (\textit{bottom}).
+}}
+
+}{%
+
+%%% RIGHT COLUMN %%%
+
+\vspace{-3em}\section{Inner mechanisms}
+\fontsize{40}{50}\selectfont
+Individual dataset representation
+
+\vspace{.75ex}\begin{center}
+    \includegraphics[width=.65\linewidth]{tex/individual.pdf}
+\end{center}
+
+Modified truncation selection
+
+\vspace{.75ex}\begin{center}
+    \includegraphics[width=.65\linewidth]{tex/selection.pdf}
+\end{center}
+
+Uniform-sampling crossover
+
+\vspace{.75ex}\begin{center}
+    \includegraphics[width=.8\linewidth]{tex/crossover.pdf}
+\end{center}
+
+Mutation process adapted for datasets
+
+\vspace{.75ex}\begin{center}
+    \includegraphics[width=.9\linewidth]{tex/mutation.pdf}
+\end{center}
+}
 
 \end{document}
