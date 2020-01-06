@@ -5,6 +5,7 @@
 
 \usepackage{fontawesome}
 \usepackage{graphicx}
+\usepackage{setspace}
 
 \definecolor{mygrey}{RGB}{63, 63, 63}
 
@@ -38,7 +39,7 @@
     \includegraphics[width=.3\linewidth]{img/cu_logo}
 
     \vfill%
-    \textbf{%
+    \fontsize{40}{50}\selectfont\textbf{%
         \faGithub~\faTwitter\ \ daffidwilde
         \hfill%
         \faBook\ \ \texttt{edo.readthedocs.io}
@@ -50,68 +51,95 @@
 }{%
 
 %%% LEFT COLUMN %%%
-\title{%
+\vspace{-1ex}\title{%
     Evolutionary dataset
     \\optimisation: learning
     \\algorithm quality through
     \\evolution
 }
 \author{%
-    \textbf{Henry Wilde}, Vincent Knight,
+    \vspace{-1ex}\textbf{Henry Wilde}, Vincent Knight,
     \\Jonathan Gillard
 }
 
-\section{Motivating paradigm}
+\vspace{-1em}\section{Motivating paradigm}
+\vspace{-1em}\begin{center}
+    \includegraphics[width=.9\linewidth]{tex/paradigm.pdf}
+\end{center}
 
-\includegraphics[width=\linewidth]{tex/paradigm.pdf}
+\textcolor{mygrey}{%
+    \textit{Left:} the proposed concept to understand `good' datasets for an
+    algorithm. \textit{Right:} the established approach to algorithm selection
+    by metric comparison.
+}
 
+\vspace{-2em}\section{Using an evolutionary\\algorithm}
 
-\section{Using an evolutionary\\algorithm}
-
-\begin{minipage}{.05\linewidth}
+\vspace{-1em}\begin{minipage}{.04\linewidth}
     \
 \end{minipage}
 \begin{minipage}{.9\linewidth}
-\begin{itemize}
-    \renewcommand\labelitemi{\faThumbsOUp~}
-    \item Effective in complex domains
-    \item Adjustable design
-    \item Transparent and rich solutions
-\end{itemize}
+    \begin{itemize}
+        \renewcommand\labelitemi{\faThumbsOUp~}
+        \item Effective in complex domains
+        \item Meaningful and adjustable design
+        \item Transparent and rich solutions
+    \end{itemize}
 
-\vspace{1ex}\begin{itemize}
-    \renewcommand\labelitemi{\faThumbsODown~}
-    \item Potential suboptimal termination
-    \item Finds the `easy' way out
-    \item Requires careful consideration of fitness
-\end{itemize}
+    \vspace{1ex}\begin{itemize}
+        \renewcommand\labelitemi{\faThumbsODown~}
+        \item Potential suboptimal termination
+        \item Finds the `easy' way out
+        \item Requires careful consideration of fitness
+    \end{itemize}
 \end{minipage}
 
 
 \section{A case study in clustering}
 
-\includegraphics[width=\linewidth]{img/kmeans.pdf}\vspace{1ex}
+\vspace{-1em}\begin{center}
+    \begin{minipage}{.8\linewidth}
+        \includegraphics[width=\linewidth]{img/kmeans.pdf}\vspace{1ex}
 
-\includegraphics[width=\linewidth]{img/dbscan.pdf}
+        \includegraphics[width=\linewidth]{img/dbscan.pdf}
+    \end{minipage}
+\end{center}
+
+\textcolor{mygrey}{%
+    Best and worst datasets from attempt to maximise the silhouette of
+    \(k\)-means (\textit{top}) whilst minimising that of DBSCAN
+    (\textit{bottom}).
+}
 
 }{%
 
 %%% RIGHT COLUMN %%%
 
-\vspace{-2em}\section{Inner mechanisms}
+\vspace{-3em}\section{Inner mechanisms}
+\fontsize{36}{50}\selectfont
+Individual dataset representation
 
-\centering%
-\includegraphics[width=.7\linewidth]{tex/individual.pdf}
-\vfill\vspace{.5ex}\hrule height 3pt\vspace{.5ex}\vfill
+\vspace{.5ex}\begin{center}
+    \includegraphics[width=.65\linewidth]{tex/individual.pdf}
+\end{center}
 
-\includegraphics[width=.6\linewidth]{tex/selection.pdf}
-\vfill\vspace{.5ex}\hrule height 3pt\vspace{.5ex}\vfill
+Modified truncation selection
 
-\includegraphics[width=.8\linewidth]{tex/crossover.pdf}
-\vfill\vspace{.5ex}\hrule height 3pt\vspace{.5ex}\vfill
+\vspace{.5ex}\begin{center}
+    \includegraphics[width=.65\linewidth]{tex/selection.pdf}
+\end{center}
 
-\includegraphics[width=\linewidth]{tex/mutation.pdf}
+Uniform-sampling crossover
 
+\vspace{.5ex}\begin{center}
+    \includegraphics[width=.8\linewidth]{tex/crossover.pdf}
+\end{center}
+
+Mutation process adapted for datasets
+
+\vspace{.5ex}\begin{center}
+    \includegraphics[width=.9\linewidth]{tex/mutation.pdf}
+\end{center}
 }
 
 \end{document}
