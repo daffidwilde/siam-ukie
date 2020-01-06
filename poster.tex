@@ -13,7 +13,7 @@
 \renewcommand{\fontsizetitle}{\fontsize{64}{80} \selectfont}
 
 % Main column font
-\renewcommand{\fontsizemain}{\fontsize{125}{200} \selectfont}
+\renewcommand{\fontsizemain}{\fontsize{130}{200} \selectfont}
 
 %% Setting the width of columns
 % Left column
@@ -28,8 +28,10 @@
 
 %%% MAIN COLUMN %%%
 \maincolumn{%
-    \textbf{Benchmark datasets} are \textbf{not the only option} when
-    \textbf{understanding} an algorithm's \textbf{performance}
+    \textbf{Benchmark datasets}\\
+    are \textbf{not the only option}\\
+    when \textbf{understanding}\\
+    algorithm \textbf{performance}
 }{%
     \compactqrcode{img/paper_qr.eps}{%
         \textbf{Take a picture} to\\
@@ -39,7 +41,7 @@
     \includegraphics[width=.3\linewidth]{img/cu_logo}
 
     \vfill%
-    \fontsize{40}{50}\selectfont\textbf{%
+    \vspace{2em}\fontsize{40}{50}\selectfont\textbf{%
         \faGithub~\faTwitter\ \ daffidwilde
         \hfill%
         \faBook\ \ \texttt{edo.readthedocs.io}
@@ -63,17 +65,17 @@
 }
 
 \vspace{-1em}\section{Motivating paradigm}
-\vspace{-1em}\begin{center}
+\vspace{-1.5em}\begin{center}
     \includegraphics[width=.9\linewidth]{tex/paradigm.pdf}
 \end{center}
 
 \textcolor{mygrey}{%
-    \textit{Left:} the proposed concept to understand `good' datasets for an
-    algorithm. \textit{Right:} the established approach to algorithm selection
-    by metric comparison.
+    \textit{Left:} the proposed concept to understand dataset performance by
+    exploration of `good' (or bad) datasets. \textit{Right:} the established
+    approach to algorithm selection by metric comparison.
 }
 
-\vspace{-2em}\section{Using an evolutionary\\algorithm}
+\vspace{-.5em}\section{Using an evolutionary\\algorithm}
 
 \vspace{-1em}\begin{minipage}{.04\linewidth}
     \
@@ -97,7 +99,7 @@
 
 \section{A case study in clustering}
 
-\vspace{-1em}\begin{center}
+\vspace{-1.5em}\begin{center}
     \begin{minipage}{.8\linewidth}
         \includegraphics[width=\linewidth]{img/kmeans.pdf}\vspace{1ex}
 
@@ -116,28 +118,28 @@
 %%% RIGHT COLUMN %%%
 
 \vspace{-3em}\section{Inner mechanisms}
-\fontsize{36}{50}\selectfont
+\fontsize{40}{50}\selectfont
 Individual dataset representation
 
-\vspace{.5ex}\begin{center}
+\vspace{.75ex}\begin{center}
     \includegraphics[width=.65\linewidth]{tex/individual.pdf}
 \end{center}
 
 Modified truncation selection
 
-\vspace{.5ex}\begin{center}
+\vspace{.75ex}\begin{center}
     \includegraphics[width=.65\linewidth]{tex/selection.pdf}
 \end{center}
 
 Uniform-sampling crossover
 
-\vspace{.5ex}\begin{center}
+\vspace{.75ex}\begin{center}
     \includegraphics[width=.8\linewidth]{tex/crossover.pdf}
 \end{center}
 
 Mutation process adapted for datasets
 
-\vspace{.5ex}\begin{center}
+\vspace{.75ex}\begin{center}
     \includegraphics[width=.9\linewidth]{tex/mutation.pdf}
 \end{center}
 }
